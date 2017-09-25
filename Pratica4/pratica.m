@@ -33,12 +33,13 @@ imwrite(saida2, "2.jpg");
 magnitude_x = [-1, 0, 1; -2, 0, 2; -1, 0, 1];
 magnitude_y = [1, 2, 1; 0, 0, 0; -1, -2, -1];
 
-imagem3 = padarray(imagem, [3,3], "replicate");
+imagem3 = padarray(imagem, [1,1], "replicate");
 
 gradiente_x = filter2(magnitude_x, imagem3, "valid");
 gradiente_y = filter2(magnitude_y, imagem3, "valid");
 
 saida3 = sqrt(gradiente_x.^2 + gradiente_y.^2);
+#saida3 = abs(gradiente_x) + abs(gradiente_y);
 
 imshow(saida3);
 imwrite(saida3, "3.jpg"); 
