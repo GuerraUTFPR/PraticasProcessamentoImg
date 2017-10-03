@@ -30,8 +30,13 @@ saida2 = filter2(mascara,imagem2, "valid");
 #imshow(saida2);
 imwrite(saida2, "2.jpg"); 
 
-magnitude_x = [-1, 0, 1; -2, 0, 2; -1, 0, 1];
-magnitude_y = [1, 2, 1; 0, 0, 0; -1, -2, -1];
+magnitude_y = [-1, 0, 1;
+			         -2, 0, 2;
+			         -1, 0, 1];
+
+magnitude_x = [-1, -2,-1;
+			          0, 0, 0;
+			          1, 2, 1];
 
 imagem3 = padarray(imagem, [1,1], "replicate");
 
